@@ -195,6 +195,27 @@
               class="h-12 w-12"
             />
           </a>
+          
+          <button
+            id="share-button"
+            class="transition duration-300 hover:opacity-80 cursor-pointer bg-transparent border-none p-0"
+            title="Share"
+          >
+            <img
+              src="elements/share.png"
+              alt="Share"
+              class="h-12 w-12"
+            />
+          </button>
+        </div>
+        
+        <!-- Copied confirmation popup -->
+        <div
+          id="copy-popup"
+          class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-white text-neutral-900 px-6 py-3 rounded-lg shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50"
+          style="transition: opacity 0.3s ease, transform 0.3s ease;"
+        >
+          <p class="font-semibold" data-key="copied-clipboard">✓ Copied to clipboard!</p>
         </div>
       </section>
 
@@ -352,6 +373,7 @@
           setupCopyButton();
         }
         setCurrentYear();
+        setupShareButton();
       });
 
       function syncDropdownWithCurrentLanguage() {
@@ -566,6 +588,35 @@
 
       function setCurrentYear() {
         document.getElementById('year').textContent = new Date().getFullYear();
+      }
+
+      function setupShareButton() {
+        const shareButton = document.getElementById('share-button');
+        const copyPopup = document.getElementById('copy-popup');
+        
+        if (shareButton && copyPopup) {
+          shareButton.addEventListener('click', () => {
+            const websiteUrl = 'psygreg.linux.toys';
+            
+            navigator.clipboard.writeText(websiteUrl).then(() => {
+              // Show popup with animation
+              copyPopup.style.opacity = '1';
+              copyPopup.style.transform = 'translate(-50%, 0)';
+              copyPopup.classList.remove('pointer-events-none');
+              
+              // Hide popup after 2 seconds
+              setTimeout(() => {
+                copyPopup.style.opacity = '0';
+                copyPopup.style.transform = 'translate(-50%, -10px)';
+                setTimeout(() => {
+                  copyPopup.classList.add('pointer-events-none');
+                }, 300);
+              }, 2000);
+            }).catch(err => {
+              console.error('Failed to copy:', err);
+            });
+          });
+        }
       }
     </script>
   </body>
