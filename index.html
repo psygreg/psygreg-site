@@ -1,637 +1,489 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Psygreg</title>
 
-    <link rel="icon" href="elements/logo.png" type="image/png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psygreg</title>
 
-    <meta
-      name="description"
-      content="Criador de vídeo, streamer e desenvolvedor de software de código aberto."
-    />
-    <meta
-      name="keywords"
-      content="psygreg, Linux, tools, scripts, gaming, development, video, creator, linux toys, linuxtoys, streamer"
-    />
-    <meta name="author" content="psygreg" />
+  <link rel="icon" href="elements/logo.png" type="image/png" />
 
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://psygreg.github.io/psygreg-site/"
-    />
-    <meta property="og:title" content="Psygreg" />
-    <meta
-      property="og:description"
-      content="Criador de vídeo, streamer e desenvolvedor de software de código aberto."
-    />
-    <meta
-      property="og:image"
-      content="https://raw.githubusercontent.com/psygreg/psygreg-site/main/elements/card.jpg"
-    />
+  <meta name="description" content="Criador de vídeo, streamer e desenvolvedor de software de código aberto." />
+  <meta name="keywords"
+    content="psygreg, Linux, tools, scripts, gaming, development, video, creator, linux toys, linuxtoys, streamer" />
+  <meta name="author" content="psygreg" />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta
-      property="twitter:url"
-      content="https://psygreg.github.io/psygreg-site/"
-    />
-    <meta property="twitter:title" content="Psygreg" />
-    <meta
-      property="twitter:description"
-      content="Criador de vídeo, streamer e desenvolvedor de software de código aberto."
-    />
-    <meta
-      property="twitter:image"
-      content="https://raw.githubusercontent.com/psygreg/psygreg-site/main/elements/card.jpg"
-    />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://psygreg.codeberg.page/website/" />
+  <meta property="og:title" content="Psygreg" />
+  <meta property="og:description" content="Criador de vídeo, streamer e desenvolvedor de software de código aberto." />
+  <meta property="og:image" content="https://codeberg.org/psygreg/website/raw/branch/pages/elements/me.jpg" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/translations.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-    </style>
-  </head>
-  <body class="bg-neutral-900 text-white">
-    <header class="bg-neutral-800 shadow-md sticky top-0 z-50">
-      <nav
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <div class="flex items-center">
-          <img
-            src="elements/logo.png"
-            alt="Psygreg Logo"
-            class="h-8 w-8 mr-3"
-          />
-          <h1 class="text-2xl font-bold text-white"></h1>
-        </div>
-        <div class="flex items-center space-x-4">
-          <div class="relative">
-            <button
-              id="language-dropdown-btn"
-              class="mx-2 px-3 py-1 rounded-md text-sm font-medium text-white transition duration-300 flex items-center"
-              style="background-color: #ea6954;"
-            >
-              <span id="current-lang">🇧🇷 PT</span>
-              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div
-              id="language-dropdown"
-              class="absolute right-0 mt-2 w-28 bg-neutral-800 border border-neutral-700 rounded-md shadow-lg z-50 hidden max-h-60 overflow-y-auto"
-            >
-              <button
-                id="lang-en"
-                class="block w-full px-3 py-2 text-sm text-left hover:bg-neutral-700 transition duration-300 rounded-t-md"
-              >
-                🇺🇸 EN
-              </button>
-              <button
-                id="lang-pt"
-                class="block w-full px-3 py-2 text-sm text-left hover:bg-neutral-700 transition duration-300"
-              >
-                🇧🇷 PT
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://psygreg.codeberg.page/website/" />
+  <meta property="twitter:title" content="Psygreg" />
+  <meta property="twitter:description"
+    content="Criador de vídeo, streamer e desenvolvedor de software de código aberto." />
+  <meta property="twitter:image" content="https://codeberg.org/psygreg/website/raw/branch/pages/elements/me.jpg" />
 
-    <main class="container mx-auto px-6 py-12">
-      <section class="text-center py-16 px-4 rounded-lg" style="background-color: #ea6954;">
-        <div class="max-w-md mx-auto mb-8">
-          <img
-            src="elements/card.jpg"
-            alt="Profile Card"
-            class="w-full rounded-lg shadow-lg"
-          />
-        </div>
-        
-        <div class="flex justify-center items-center gap-6 flex-wrap">
-          <a
-            href="mailto:psygreg@pm.me"
-            target="_blank"
-            class="transition duration-300 hover:opacity-80"
-            title="Email"
-          >
-            <img
-              src="elements/email.png"
-              alt="Email"
-              class="h-12 w-12"
-            />
-          </a>
-          
-          <a
-            href="https://github.com/psygreg"
-            target="_blank"
-            class="transition duration-300 hover:opacity-80"
-            title="GitHub"
-          >
-            <img
-              src="elements/github.png"
-              alt="GitHub"
-              class="h-12 w-12"
-            />
-          </a>
-          
-          <a
-            href="https://instagram.com/psygreg"
-            target="_blank"
-            class="transition duration-300 hover:opacity-80"
-            title="Instagram"
-          >
-            <img
-              src="elements/insta.png"
-              alt="Instagram"
-              class="h-12 w-12"
-            />
-          </a>
-          
-          <a
-            href="https://tiktok.com/@psygreg"
-            target="_blank"
-            class="transition duration-300 hover:opacity-80"
-            title="TikTok"
-          >
-            <img
-              src="elements/tiktok.png"
-              alt="TikTok"
-              class="h-12 w-12"
-            />
-          </a>
-          
-                    
-          <a
-            href="https://discord.gg/5Qv8GzBFKR"
-            target="_blank"
-            class="transition duration-300 hover:opacity-80"
-            title="Discord"
-          >
-            <img
-              src="elements/discord.png"
-              alt="Discord"
-              class="h-12 w-12"
-            />
-          </a>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/translations.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-          <a
-            href="https://twitch.tv/psygreg"
-            target="_blank"
-            class="transition duration-300 hover:opacity-80"
-            title="Twitch"
-          >
-            <img
-              src="elements/twitch.png"
-              alt="Twitch"
-              class="h-12 w-12"
-            />
-          </a>
-          
-          <a
-            href="https://youtube.com/@psygreg"
-            target="_blank"
-            class="transition duration-300 hover:opacity-80"
-            title="YouTube"
-          >
-            <img
-              src="elements/youtube.png"
-              alt="YouTube"
-              class="h-12 w-12"
-            />
-          </a>
-          
-          <button
-            id="share-button"
-            class="transition duration-300 hover:opacity-80 cursor-pointer bg-transparent border-none p-0"
-            title="Share"
-          >
-            <img
-              src="elements/share.png"
-              alt="Share"
-              class="h-12 w-12"
-            />
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-900 text-white">
+  <header class="bg-neutral-800 shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <img src="elements/logo.png" alt="Psygreg Logo" class="h-8 w-8 mr-3" />
+        <h1 class="text-2xl font-bold text-white"></h1>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="relative">
+          <button id="language-dropdown-btn"
+            class="mx-2 px-3 py-1 rounded-md text-sm font-medium text-white transition duration-300 flex items-center"
+            style="background-color: #e7b417;">
+            <span id="current-lang">🇧🇷 PT</span>
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
           </button>
-        </div>
-        
-        <!-- Copied confirmation popup -->
-        <div
-          id="copy-popup"
-          class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-white text-neutral-900 px-6 py-3 rounded-lg shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50"
-          style="transition: opacity 0.3s ease, transform 0.3s ease;"
-        >
-          <p class="font-semibold" data-key="copied-clipboard">✓ Copied to clipboard!</p>
-        </div>
-      </section>
-
-      <section class="py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 class="text-3xl font-bold mb-4" data-key="main-channel-title">
-              Main Channel
-            </h3>
-            <p
-              class="text-lg text-gray-400 mb-6 text-justify"
-              data-key="main-channel-text"
-            >
-              Technology, games, Linux and more in a perfect mix of information and entertainment!
-            </p>
-            <a
-              href="https://youtube.com/@psygreg"
-              target="_blank"
-              class="inline-block text-white font-bold py-3 px-8 rounded-lg transition duration-300"
-              style="background-color: #ea6954;"
-              data-key="watch-now-button"
-              >Watch now</a
-            >
+          <div id="language-dropdown"
+            class="absolute right-0 mt-2 w-28 bg-neutral-800 border border-neutral-700 rounded-md shadow-lg z-50 hidden max-h-60 overflow-y-auto">
+            <button id="lang-en"
+              class="block w-full px-3 py-2 text-sm text-left hover:bg-neutral-700 transition duration-300 rounded-t-md">
+              🇺🇸 EN
+            </button>
+            <button id="lang-pt"
+              class="block w-full px-3 py-2 text-sm text-left hover:bg-neutral-700 transition duration-300">
+              🇧🇷 PT
+            </button>
           </div>
-          <img
-            src="elements/channel.jpg"
-            alt="Main Channel"
-            class="rounded-lg shadow-lg w-full"
-          />
-        </div>
-      </section>
-
-      <section class="py-16 bg-neutral-800 -mx-6 px-6">
-        <div class="container mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <img
-              src="elements/live.jpg"
-              alt="Live"
-              class="rounded-lg shadow-lg w-full"
-            />
-            <div>
-              <h3
-                class="text-3xl font-bold mb-4"
-                data-key="live-title"
-              >
-                Live
-              </h3>
-              <p
-                class="text-lg text-gray-400 text-justify"
-                data-key="live-text"
-              >
-                See it all unfold live on Twitch as we set foot on new adventures and make watch parties. If you missed anything, you can always relive the best moments on Youtube!
-              </p>
-              <div class="mt-6 flex gap-4 justify-end">
-                <a
-                  href="https://twitch.tv/psygreg"
-                  target="_blank"
-                  class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
-                  data-key="twitch-button"
-                >Watch on Twitch</a>
-                <a
-                  href="https://youtube.com/@psygreglive"
-                  target="_blank"
-                  class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
-                  data-key="youtube-button"
-                >Watch on YouTube</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 class="text-3xl font-bold mb-4" data-key="linuxtoys-title">
-              LinuxToys
-            </h3>
-            <p
-              class="text-lg text-gray-400 text-justify"
-              data-key="linuxtoys-text"
-            >
-              All my tools for Linux wrapped up nicely for you in a single package.
-            </p>
-            <div class="mt-6">
-              <a
-                href="https://linux.toys"
-                target="_blank"
-                class="inline-block text-white font-bold py-3 px-8 rounded-lg transition duration-300"
-                style="background-color: #ea6954;"
-                data-key="linuxtoys-button"
-              >Get now</a>
-            </div>
-          </div>
-          <img
-            src="elements/screenshot.png"
-            alt="LinuxToys"
-            class="rounded-lg shadow-lg w-full"
-          />
-        </div>
-      </section>
-    </main>
-
-    <footer class="py-8" style="background-color: #ea6954;">
-      <div class="container mx-auto px-6 text-center">
-        <div class="text-white text-sm">
-          <p>
-            Copyright © <span id="year"></span> psygreg.
-            <span data-key="license-text"></span>
-            <a
-              href="https://github.com/psygreg/linuxtoys/blob/master/LICENSE"
-              target="_blank"
-              class="underline hover:text-neutral-200 transition duration-300"
-              >GPL-3.0</a
-            >.
-          </p>
         </div>
       </div>
-    </footer>
+    </nav>
+  </header>
 
-    <script>
-      // Initialize translation manager and tools loader
-      let translationManager;
-      let toolsLoader;
+  <main class="container mx-auto px-6 py-12">
+    <section class="text-center py-16 px-4 rounded-lg" style="background-color: #e7b417;">
+      <div class="max-w-md mx-auto mb-8">
+        <img src="elements/me.jpg" alt="Profile Card" class="w-full rounded-lg shadow-lg" />
+      </div>
 
-      document.addEventListener('DOMContentLoaded', async () => {
-        window.translationManager = new TranslationManager();
-        await window.translationManager.init();
-        
-        // Set up dropdown functionality AFTER translation manager is ready
-        setupLanguageDropdown();
-        
-        // Additional sync after everything is loaded
-        setTimeout(() => {
-          syncDropdownWithCurrentLanguage();
-        }, 200);
-        
-        // Failsafe: Ensure loading indicator is always hidden after initialization
-        setTimeout(() => {
-          const loadingIndicator = document.getElementById('tools-loading');
-          if (loadingIndicator) {
-            loadingIndicator.style.display = 'none';
-          }
-          const toolsContainer = document.querySelector('.tool-grid-container');
-          if (toolsContainer) {
-            toolsContainer.style.display = 'block';
-          }
-        }, 100);
-        
-        // Set up other functionality (only if elements exist)
-        if (document.getElementById('install-code')) {
-          setupInstallCommand();
+      <div class="flex justify-center items-center gap-6 flex-wrap">
+        <a href="mailto:psygreg@pm.me" target="_blank" class="transition duration-300 hover:opacity-80" title="Email">
+          <img src="elements/email.png" alt="Email" class="h-12 w-12" />
+        </a>
+
+        <a href="https://codeberg.org/psygreg" target="_blank" class="transition duration-300 hover:opacity-80"
+          title="Codeberg">
+          <img src="elements/codeberg.png" alt="Codeberg" class="h-12 w-12" />
+        </a>
+
+        <a href="https://instagram.com/psygreg" target="_blank" class="transition duration-300 hover:opacity-80"
+          title="Instagram">
+          <img src="elements/insta.png" alt="Instagram" class="h-12 w-12" />
+        </a>
+
+        <a href="https://tiktok.com/@psygreg" target="_blank" class="transition duration-300 hover:opacity-80"
+          title="TikTok">
+          <img src="elements/tiktok.png" alt="TikTok" class="h-12 w-12" />
+        </a>
+
+
+        <a href="https://stt.gg/FgwZEp0w" target="_blank" class="transition duration-300 hover:opacity-80"
+          title="Stoat">
+          <img src="elements/stoat.png" alt="Stoat" class="h-12 w-12" />
+        </a>
+
+        <a href="https://twitch.tv/psygreg" target="_blank" class="transition duration-300 hover:opacity-80"
+          title="Twitch">
+          <img src="elements/twitch.png" alt="Twitch" class="h-12 w-12" />
+        </a>
+
+        <a href="https://youtube.com/@psygreg" target="_blank" class="transition duration-300 hover:opacity-80"
+          title="YouTube">
+          <img src="elements/youtube.png" alt="YouTube" class="h-12 w-12" />
+        </a>
+
+        <button id="share-button"
+          class="transition duration-300 hover:opacity-80 cursor-pointer bg-transparent border-none p-0" title="Share">
+          <img src="elements/share.png" alt="Share" class="h-12 w-12" />
+        </button>
+      </div>
+
+      <!-- Copied confirmation popup -->
+      <div id="copy-popup"
+        class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-white text-neutral-900 px-6 py-3 rounded-lg shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50"
+        style="transition: opacity 0.3s ease, transform 0.3s ease;">
+        <p class="font-semibold" data-key="copied-clipboard">✓ Copied to clipboard!</p>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-3xl font-bold mb-4" data-key="main-channel-title">
+            Main Channel
+          </h3>
+          <p class="text-lg text-gray-400 mb-6 text-justify" data-key="main-channel-text">
+            Technology, games, Linux and more in a perfect mix of information and entertainment!
+          </p>
+          <a href="https://youtube.com/@psygreg" target="_blank"
+            class="inline-block text-white font-bold py-3 px-8 rounded-lg transition duration-300"
+            style="background-color: #e7b417;" data-key="watch-now-button">Watch now</a>
+        </div>
+        <img src="elements/channel.jpg" alt="Main Channel" class="rounded-lg shadow-lg w-full" />
+      </div>
+    </section>
+
+    <section class="py-16 bg-neutral-800 -mx-6 px-6">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <img src="elements/live.jpg" alt="Live" class="rounded-lg shadow-lg w-full" />
+          <div>
+            <h3 class="text-3xl font-bold mb-4" data-key="live-title">
+              Live
+            </h3>
+            <p class="text-lg text-gray-400 text-justify" data-key="live-text">
+              See it all unfold live on Twitch as we set foot on new adventures and make watch parties. If you missed
+              anything, you can always relive the best moments on Youtube!
+            </p>
+            <div class="mt-6 flex gap-4 justify-end">
+              <a href="https://twitch.tv/psygreg" target="_blank"
+                class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+                data-key="twitch-button">Watch on Twitch</a>
+              <a href="https://youtube.com/@psygreglive" target="_blank"
+                class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+                data-key="youtube-button">Watch on YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-3xl font-bold mb-4" data-key="linuxtoys-title">
+            LinuxToys
+          </h3>
+          <p class="text-lg text-gray-400 text-justify" data-key="linuxtoys-text">
+            All my tools for Linux wrapped up nicely for you in a single package.
+          </p>
+          <div class="mt-6">
+            <a href="https://linux.toys" target="_blank"
+              class="inline-block text-white font-bold py-3 px-8 rounded-lg transition duration-300"
+              style="background-color: #e7b417;" data-key="linuxtoys-button">Get now</a>
+          </div>
+        </div>
+        <img src="elements/screenshot.png" alt="LinuxToys" class="rounded-lg shadow-lg w-full" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8" style="background-color: #e7b417;">
+    <div class="container mx-auto px-6 text-center">
+      <div class="text-white text-sm">
+        <p>
+          Copyright © <span id="year"></span> psygreg.
+          <span data-key="license-text"></span>
+          <a href="https://codeberg.org/psygreg/linuxtoys/src/branch/master/LICENSE" target="_blank"
+            class="underline hover:text-neutral-200 transition duration-300">GPL-3.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize translation manager and tools loader
+    let translationManager;
+    let toolsLoader;
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      window.translationManager = new TranslationManager();
+      await window.translationManager.init();
+
+      // Set up dropdown functionality AFTER translation manager is ready
+      setupLanguageDropdown();
+
+      // Additional sync after everything is loaded
+      setTimeout(() => {
+        syncDropdownWithCurrentLanguage();
+      }, 200);
+
+      // Failsafe: Ensure loading indicator is always hidden after initialization
+      setTimeout(() => {
+        const loadingIndicator = document.getElementById('tools-loading');
+        if (loadingIndicator) {
+          loadingIndicator.style.display = 'none';
         }
-        if (document.getElementById('copy-button')) {
-          setupCopyButton();
+        const toolsContainer = document.querySelector('.tool-grid-container');
+        if (toolsContainer) {
+          toolsContainer.style.display = 'block';
         }
-        setCurrentYear();
-        setupShareButton();
+      }, 100);
+
+      // Set up other functionality (only if elements exist)
+      if (document.getElementById('install-code')) {
+        setupInstallCommand();
+      }
+      if (document.getElementById('copy-button')) {
+        setupCopyButton();
+      }
+      setCurrentYear();
+      setupShareButton();
+    });
+
+    function syncDropdownWithCurrentLanguage() {
+      const currentLang = document.getElementById('current-lang');
+      if (window.translationManager) {
+        let detectedLang = 'en'; // default fallback
+
+        // Try different ways to get the current language
+        if (window.translationManager.currentLang) {
+          detectedLang = window.translationManager.currentLang;
+        } else if (window.translationManager.currentLanguage) {
+          detectedLang = window.translationManager.currentLanguage;
+        } else if (window.translationManager.language) {
+          detectedLang = window.translationManager.language;
+        } else {
+          // Fallback: check browser language
+          const browserLang = navigator.language || navigator.userLanguage;
+          if (browserLang.startsWith('pt')) {
+            detectedLang = 'pt';
+          } else if (browserLang.startsWith('es')) {
+            detectedLang = 'es';
+          } else if (browserLang.startsWith('fr')) {
+            detectedLang = 'fr';
+          } else if (browserLang.startsWith('de')) {
+            detectedLang = 'de';
+          } else if (browserLang.startsWith('zh')) {
+            detectedLang = 'zh';
+          } else if (browserLang.startsWith('ja')) {
+            detectedLang = 'ja';
+          } else if (browserLang.startsWith('ru')) {
+            detectedLang = 'ru';
+          }
+        }
+
+        const languageMap = {
+          'en': '🇺🇸 EN',
+          'pt': '🇧🇷 PT',
+        };
+
+        const displayText = languageMap[detectedLang] || '🇺🇸 EN';
+        currentLang.textContent = displayText;
+      }
+    }
+
+    function makeToolsClickable() {
+      const toolLists = document.querySelectorAll('.tool-list li');
+
+      toolLists.forEach(toolItem => {
+        // Make all tools clickable
+        toolItem.style.cursor = 'pointer';
+        toolItem.classList.add('tool-clickable');
+
+        // Add click event to open knowledge base
+        toolItem.addEventListener('click', () => {
+          window.open('knowledgebase.html', '_blank');
+        });
+
+        // Add hover effects
+        toolItem.addEventListener('mouseenter', () => {
+          toolItem.style.textDecoration = 'underline';
+          toolItem.style.color = '#e7b417'; // yellow accent
+        });
+
+        toolItem.addEventListener('mouseleave', () => {
+          toolItem.style.textDecoration = 'none';
+          toolItem.style.color = '#d1d5db'; // gray-300 (original color)
+        });
+      });
+    }
+
+    function setupLanguageDropdown() {
+      const dropdownBtn = document.getElementById('language-dropdown-btn');
+      const dropdown = document.getElementById('language-dropdown');
+      const currentLang = document.getElementById('current-lang');
+      const langButtons = dropdown.querySelectorAll('button');
+
+      // Function to update the displayed language
+      function updateDisplayedLanguage(lang) {
+        const languageMap = {
+          'en': '🇺🇸 EN',
+          'pt': '🇧🇷 PT',
+          'es': '🇪🇸 ES',
+          'fr': '🇫🇷 FR',
+          'de': '🇩🇪 DE',
+          'nl': '🇳🇱 NL',
+          'zh': '🇨🇳 ZH',
+          'ja': '🇯🇵 JA',
+          'ru': '🇷🇺 RU'
+        };
+        const displayText = languageMap[lang] || '🇺🇸 EN';
+        currentLang.textContent = displayText;
+      }
+
+      // Set initial language to match translation manager
+      // We need to wait a bit for the translation manager to fully initialize
+      setTimeout(() => {
+        if (window.translationManager && window.translationManager.currentLanguage) {
+          updateDisplayedLanguage(window.translationManager.currentLanguage);
+        } else if (window.translationManager && window.translationManager.detectLanguage) {
+          // Fallback: try to detect the language if currentLanguage isn't set yet
+          const detectedLang = window.translationManager.detectLanguage();
+          updateDisplayedLanguage(detectedLang);
+        }
+      }, 100);
+
+      // Toggle dropdown visibility
+      dropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
       });
 
-      function syncDropdownWithCurrentLanguage() {
-        const currentLang = document.getElementById('current-lang');
-        if (window.translationManager) {
-          let detectedLang = 'en'; // default fallback
-          
-          // Try different ways to get the current language
-          if (window.translationManager.currentLang) {
-            detectedLang = window.translationManager.currentLang;
-          } else if (window.translationManager.currentLanguage) {
-            detectedLang = window.translationManager.currentLanguage;
-          } else if (window.translationManager.language) {
-            detectedLang = window.translationManager.language;
-          } else {
-            // Fallback: check browser language
-            const browserLang = navigator.language || navigator.userLanguage;
-            if (browserLang.startsWith('pt')) {
-              detectedLang = 'pt';
-            } else if (browserLang.startsWith('es')) {
-              detectedLang = 'es';
-            } else if (browserLang.startsWith('fr')) {
-              detectedLang = 'fr';
-            } else if (browserLang.startsWith('de')) {
-              detectedLang = 'de';
-            } else if (browserLang.startsWith('zh')) {
-              detectedLang = 'zh';
-            } else if (browserLang.startsWith('ja')) {
-              detectedLang = 'ja';
-            } else if (browserLang.startsWith('ru')) {
-              detectedLang = 'ru';
-            }
-          }
-          
-          const languageMap = {
-            'en': '🇺🇸 EN',
-            'pt': '🇧🇷 PT',
-          };
-          
-          const displayText = languageMap[detectedLang] || '🇺🇸 EN';
-          currentLang.textContent = displayText;
-        }
-      }
-
-      function makeToolsClickable() {
-        const toolLists = document.querySelectorAll('.tool-list li');
-        
-        toolLists.forEach(toolItem => {
-          // Make all tools clickable
-          toolItem.style.cursor = 'pointer';
-          toolItem.classList.add('tool-clickable');
-          
-          // Add click event to open knowledge base
-          toolItem.addEventListener('click', () => {
-            window.open('knowledgebase.html', '_blank');
-          });
-          
-          // Add hover effects
-          toolItem.addEventListener('mouseenter', () => {
-            toolItem.style.textDecoration = 'underline';
-            toolItem.style.color = '#ea6954'; // coral red accent
-          });
-          
-          toolItem.addEventListener('mouseleave', () => {
-            toolItem.style.textDecoration = 'none';
-            toolItem.style.color = '#d1d5db'; // gray-300 (original color)
-          });
-        });
-      }
-
-      function setupLanguageDropdown() {
-        const dropdownBtn = document.getElementById('language-dropdown-btn');
-        const dropdown = document.getElementById('language-dropdown');
-        const currentLang = document.getElementById('current-lang');
-        const langButtons = dropdown.querySelectorAll('button');
-
-        // Function to update the displayed language
-        function updateDisplayedLanguage(lang) {
-          const languageMap = {
-            'en': '🇺🇸 EN',
-            'pt': '🇧🇷 PT',
-            'es': '🇪🇸 ES',
-            'fr': '🇫🇷 FR',
-            'de': '🇩🇪 DE',
-            'nl': '🇳🇱 NL',
-            'zh': '🇨🇳 ZH',
-            'ja': '🇯🇵 JA',
-            'ru': '🇷🇺 RU'
-          };
-          const displayText = languageMap[lang] || '🇺🇸 EN';
-          currentLang.textContent = displayText;
-        }
-
-        // Set initial language to match translation manager
-        // We need to wait a bit for the translation manager to fully initialize
-        setTimeout(() => {
-          if (window.translationManager && window.translationManager.currentLanguage) {
-            updateDisplayedLanguage(window.translationManager.currentLanguage);
-          } else if (window.translationManager && window.translationManager.detectLanguage) {
-            // Fallback: try to detect the language if currentLanguage isn't set yet
-            const detectedLang = window.translationManager.detectLanguage();
-            updateDisplayedLanguage(detectedLang);
-          }
-        }, 100);
-
-        // Toggle dropdown visibility
-        dropdownBtn.addEventListener('click', (e) => {
+      // Handle language selection
+      langButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
           e.stopPropagation();
-          dropdown.classList.toggle('hidden');
-        });
-
-        // Handle language selection
-        langButtons.forEach(button => {
-          button.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const lang = button.id.split('-')[1];
-            updateDisplayedLanguage(lang);
-            dropdown.classList.add('hidden');
-            
-            // Trigger the existing translation logic
-            if (window.translationManager) {
-              window.translationManager.setLanguage(lang);
-              // Update meta description with new language
-              updateMetaDescription();
-            }
-            
-            // Update tools content if tools loader is available
-            if (window.toolsLoader) {
-              window.toolsLoader.onLanguageChange(lang);
-            }
-          });
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', () => {
+          const lang = button.id.split('-')[1];
+          updateDisplayedLanguage(lang);
           dropdown.classList.add('hidden');
-        });
 
-        // Prevent dropdown from closing when clicking inside it
-        dropdown.addEventListener('click', (e) => {
-          e.stopPropagation();
-        });
-      }
+          // Trigger the existing translation logic
+          if (window.translationManager) {
+            window.translationManager.setLanguage(lang);
+            // Update meta description with new language
+            updateMetaDescription();
+          }
 
-      function setupToggleButtons() {
-        const toggleButtons = document.querySelectorAll('.toggle-button');
-        
-        toggleButtons.forEach(button => {
-          // Apply initial translation immediately
+          // Update tools content if tools loader is available
+          if (window.toolsLoader) {
+            window.toolsLoader.onLanguageChange(lang);
+          }
+        });
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', () => {
+        dropdown.classList.add('hidden');
+      });
+
+      // Prevent dropdown from closing when clicking inside it
+      dropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
+
+    function setupToggleButtons() {
+      const toggleButtons = document.querySelectorAll('.toggle-button');
+
+      toggleButtons.forEach(button => {
+        // Apply initial translation immediately
+        const list = button.nextElementSibling;
+        if (list && list.classList.contains('expanded')) {
+          button.textContent = window.translationManager.getTranslation('toggle-button-less');
+        } else {
+          button.textContent = window.translationManager.getTranslation('toggle-button');
+        }
+
+        button.addEventListener('click', () => {
           const list = button.nextElementSibling;
-          if (list && list.classList.contains('expanded')) {
+          list.classList.toggle('expanded');
+
+          // Update button text based on current state
+          if (list.classList.contains('expanded')) {
             button.textContent = window.translationManager.getTranslation('toggle-button-less');
           } else {
             button.textContent = window.translationManager.getTranslation('toggle-button');
           }
-          
-          button.addEventListener('click', () => {
-            const list = button.nextElementSibling;
-            list.classList.toggle('expanded');
-            
-            // Update button text based on current state
-            if (list.classList.contains('expanded')) {
-              button.textContent = window.translationManager.getTranslation('toggle-button-less');
-            } else {
-              button.textContent = window.translationManager.getTranslation('toggle-button');
-            }
-          });
         });
-      }
+      });
+    }
 
-      function setupInstallCommand() {
-        const command = `curl -fsSL https://linux.toys/install.sh | sh`;
-        const element = document.getElementById('install-code');
-        
-        // Store the complete command for copying
-        element.dataset.fullCommand = command;
+    function setupInstallCommand() {
+      const command = `curl -fsSL https://linux.toys/install.sh | sh`;
+      const element = document.getElementById('install-code');
 
-        let i = 0;
-        function typeWriter() {
-          if (i < command.length) {
-            element.textContent += command.charAt(i);
-            i++;
-            setTimeout(typeWriter, 30);
-          }
+      // Store the complete command for copying
+      element.dataset.fullCommand = command;
+
+      let i = 0;
+      function typeWriter() {
+        if (i < command.length) {
+          element.textContent += command.charAt(i);
+          i++;
+          setTimeout(typeWriter, 30);
         }
-
-        // Start the typewriter effect after a short delay
-        setTimeout(typeWriter, 30);
       }
 
-      function setupCopyButton() {
-        const copyButton = document.getElementById('copy-button');
-        const copyIcon = document.getElementById('copy-icon');
-        const installCode = document.getElementById('install-code');
+      // Start the typewriter effect after a short delay
+      setTimeout(typeWriter, 30);
+    }
 
-        copyButton.addEventListener('click', () => {
-          // Always copy the full command, regardless of animation state
-          const code = installCode.dataset.fullCommand || installCode.textContent.trim();
+    function setupCopyButton() {
+      const copyButton = document.getElementById('copy-button');
+      const copyIcon = document.getElementById('copy-icon');
+      const installCode = document.getElementById('install-code');
 
-          navigator.clipboard.writeText(code).then(() => {
-            copyIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />`;
+      copyButton.addEventListener('click', () => {
+        // Always copy the full command, regardless of animation state
+        const code = installCode.dataset.fullCommand || installCode.textContent.trim();
 
-            setTimeout(() => {
-              copyIcon.innerHTML = `
+        navigator.clipboard.writeText(code).then(() => {
+          copyIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />`;
+
+          setTimeout(() => {
+            copyIcon.innerHTML = `
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 3h8a2 2 0 012 2v12a2 2 0 01-2 2H8a2 2 0 01-2-2V5a2-2 0 012-2z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h8"/>
               `;
-            }, 1500);
+          }, 1500);
+        });
+      });
+    }
+
+    function setCurrentYear() {
+      document.getElementById('year').textContent = new Date().getFullYear();
+    }
+
+    function setupShareButton() {
+      const shareButton = document.getElementById('share-button');
+      const copyPopup = document.getElementById('copy-popup');
+
+      if (shareButton && copyPopup) {
+        shareButton.addEventListener('click', () => {
+          const websiteUrl = 'psygreg.linux.toys';
+
+          navigator.clipboard.writeText(websiteUrl).then(() => {
+            // Show popup with animation
+            copyPopup.style.opacity = '1';
+            copyPopup.style.transform = 'translate(-50%, 0)';
+            copyPopup.classList.remove('pointer-events-none');
+
+            // Hide popup after 2 seconds
+            setTimeout(() => {
+              copyPopup.style.opacity = '0';
+              copyPopup.style.transform = 'translate(-50%, -10px)';
+              setTimeout(() => {
+                copyPopup.classList.add('pointer-events-none');
+              }, 300);
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy:', err);
           });
         });
       }
+    }
+  </script>
+</body>
 
-      function setCurrentYear() {
-        document.getElementById('year').textContent = new Date().getFullYear();
-      }
-
-      function setupShareButton() {
-        const shareButton = document.getElementById('share-button');
-        const copyPopup = document.getElementById('copy-popup');
-        
-        if (shareButton && copyPopup) {
-          shareButton.addEventListener('click', () => {
-            const websiteUrl = 'psygreg.linux.toys';
-            
-            navigator.clipboard.writeText(websiteUrl).then(() => {
-              // Show popup with animation
-              copyPopup.style.opacity = '1';
-              copyPopup.style.transform = 'translate(-50%, 0)';
-              copyPopup.classList.remove('pointer-events-none');
-              
-              // Hide popup after 2 seconds
-              setTimeout(() => {
-                copyPopup.style.opacity = '0';
-                copyPopup.style.transform = 'translate(-50%, -10px)';
-                setTimeout(() => {
-                  copyPopup.classList.add('pointer-events-none');
-                }, 300);
-              }, 2000);
-            }).catch(err => {
-              console.error('Failed to copy:', err);
-            });
-          });
-        }
-      }
-    </script>
-  </body>
 </html>
