@@ -273,16 +273,18 @@
                             >Watch now</a
                         >
                     </div>
-                    <iframe
-                            width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/ZF6xB1ucvOU?si=7l8X49Y2yqBzQwZr"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen
-                        ></iframe>
+                    <div class="w-full aspect-video rounded-lg shadow-lg overflow-hidden">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src="https://www.youtube.com/embed/ZF6xB1ucvOU?si=7l8X49Y2yqBzQwZr"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
                 </div>
             </section>
 
@@ -291,11 +293,16 @@
                     <div
                         class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
                     >
-                        <img
-                            src="elements/live.webp"
-                            alt="Live"
-                            class="rounded-lg shadow-lg w-full"
-                        />
+                        <div class="w-full aspect-video rounded-lg shadow-lg overflow-hidden">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                frameborder="0"
+                                scrolling="no"
+                                sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-presentation allow-pointer-lock allow-orientation-lock allow-top-navigation-by-user-activation"
+                                src="https://player.twitch.tv/?channel=psygreg&parent=psygreg.linux.toys&autoplay=false"
+                            ></iframe>
+                        </div>
                         <div>
                             <h3
                                 class="text-3xl font-bold mb-4"
