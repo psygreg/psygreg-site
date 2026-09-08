@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+
+  <script>
+    (() => {
+      if (localStorage.getItem('language') === 'en') {
+        window.location.replace('/');
+      }
+    })();
+  </script>
+
+  <title>Victor "psygreg" Gregory</title>
+  <meta name="description" content="Victor &quot;psygreg&quot; Gregory — desenvolvedor-chefe do LinuxToys e criador de vídeo. Encontre perfis sociais oficiais e formas de contato.">
+  <meta name="author" content="Victor Gregory">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="canonical" href="https://psygreg.linux.toys/index.pt-BR.html">
+  <link rel="alternate" hreflang="en" href="https://psygreg.linux.toys">
+  <link rel="alternate" hreflang="pt-BR" href="https://psygreg.linux.toys/index.pt-BR.html">
+  <link rel="alternate" hreflang="x-default" href="https://psygreg.linux.toys">
+
+  <link rel="icon" type="image/webp" href="assets/favicon.webp">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://psygreg.linux.toys/index.pt-BR.html">
+  <meta property="og:title" content="Victor &quot;psygreg&quot; Gregory">
+  <meta property="og:description" content="Desenvolvedor-chefe do LinuxToys e criador de vídeo. Encontre perfis sociais oficiais e formas de contato.">
+  <meta property="og:image" content="https://psygreg.linux.toys/assets/profile.webp">
+  <meta property="og:image:alt" content="Retrato de Victor &quot;psygreg&quot; Gregory">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="profile:first_name" content="Victor">
+  <meta property="profile:last_name" content="Gregory">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Victor &quot;psygreg&quot; Gregory">
+  <meta name="twitter:description" content="Desenvolvedor-chefe do LinuxToys e criador de vídeo. Encontre perfis sociais oficiais e formas de contato.">
+  <meta name="twitter:image" content="https://psygreg.linux.toys/assets/profile.webp">
+  <meta name="twitter:image:alt" content="Retrato de Victor &quot;psygreg&quot; Gregory">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Victor Gregory",
+  "alternateName": "psygreg",
+  "description": "Victor \"psygreg\" Gregory — desenvolvedor-chefe do LinuxToys e criador de vídeo. Encontre perfis sociais oficiais e formas de contato.",
+  "image": "https://psygreg.linux.toys/assets/profile.webp",
+  "url": "https://psygreg.linux.toys/index.pt-BR.html",
+  "sameAs": [
+    "https://github.com/psygreg",
+    "https://youtube.com/@psygreg",
+    "https://instagram.com/psygreg",
+    "https://twitch.tv/psygreg",
+    "https://tiktok.com/@psygreg"
+  ]
+}
+  </script>
+
+  <style>
+    :root {
+      --accent: #b44848;
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --surface: #f5f5f5;
+      --border: #dddddd;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d0d0d;
+        --text: #f5f5f5;
+        --muted: #a8a8a8;
+        --surface: #171717;
+        --border: #2d2d2d;
+        --shadow: rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    :root[data-theme="light"] {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --surface: #f5f5f5;
+      --border: #dddddd;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0d0d0d;
+      --text: #f5f5f5;
+      --muted: #a8a8a8;
+      --surface: #171717;
+      --border: #2d2d2d;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 32px 20px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 8px 24px var(--shadow);
+      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    .theme-toggle svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card {
+      width: min(100%, 1180px);
+      text-align: center;
+    }
+
+    .portrait-wrap {
+      width: 188px;
+      height: 188px;
+      margin: 0 auto 28px;
+      padding: 5px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+    }
+
+    .portrait {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 50%;
+      background: var(--surface);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 750;
+    }
+
+    .identity-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .tagline {
+      margin: 14px auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.45;
+      white-space: nowrap;
+    }
+
+    .accent-line {
+      width: 44px;
+      height: 3px;
+      margin: 24px auto;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 100%;
+    }
+
+    .social-link {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--text);
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+    }
+
+    .social-link:hover,
+    .social-link:focus-visible {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+      outline: none;
+    }
+
+    .social-link img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .icon-placeholder {
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border: 1px dashed currentColor;
+      border-radius: 5px;
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    @media (max-width: 560px) {
+      .tagline {
+        white-space: normal;
+      }
+
+      .socials {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding-top: 84px;
+      }
+
+      .portrait-wrap {
+        width: 164px;
+        height: 164px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" type="button" aria-label="Alternar entre modo claro e escuro" title="Alternar tema">
+    <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"></path>
+    </svg>
+  </button>
+
+  <main class="card">
+    <div class="portrait-wrap">
+      <img class="portrait" src="assets/profile.webp" alt="Retrato de Victor &quot;psygreg&quot; Gregory">
+    </div>
+
+    <div class="identity-block">
+      <h1>Victor &quot;psygreg&quot; Gregory</h1>
+      <p class="tagline">Desenvolvedor-chefe do LinuxToys | Criador de Vídeo</p>
+
+      <div class="accent-line" aria-hidden="true"></div>
+
+      <nav class="socials" aria-label="Links de redes sociais">
+      <!--
+        Replace each placeholder span with an image that provides both theme variants, for example:
+
+        <img
+          src="assets/github-light.svg"
+          data-icon-light="assets/github-light.svg"
+          data-icon-dark="assets/github-dark.svg"
+          alt=""
+        >
+
+        The JavaScript below swaps the src automatically whenever the effective theme changes.
+        Then replace # with the correct social/profile URL.
+      -->
+      <a class="social-link" href="https://github.com/psygreg" aria-label="Social link 1">
+        <img
+          src="assets/light/github.webp"
+          data-icon-light="assets/light/github.webp"
+          data-icon-dark="assets/dark/github.webp"
+          alt=""
+        >
+      </a>
+      <a class="social-link" href="https://linux.toys" aria-label="Social link 1">
+        <img
+          src="assets/light/linuxtoys.svg"
+          data-icon-light="assets/light/linuxtoys.svg"
+          data-icon-dark="assets/dark/linuxtoys.svg"
+          alt=""
+        >
+      </a>
+      <a class="social-link" href="mailto:psygreg@linux.toys" aria-label="Social link 2">
+        <img
+          src="assets/light/email.webp"
+          data-icon-light="assets/light/email.webp"
+          data-icon-dark="assets/dark/email.webp"
+          alt=""
+        >
+      </a>
+      <a class="social-link" href="https://discord.gg/hbB8ccFmwT" aria-label="Social link 3">
+        <img
+          src="assets/light/discord.webp"
+          data-icon-light="assets/light/discord.webp"
+          data-icon-dark="assets/dark/discord.webp"
+          alt=""
+        >
+      </a>
+      <a class="social-link" href="https://fluxer.gg/79uTU3fw" aria-label="Social link 4">
+        <img
+          src="assets/light/fluxer.webp"
+          data-icon-light="assets/light/fluxer.webp"
+          data-icon-dark="assets/dark/fluxer.webp"
+          alt=""
+        >
+      </a>
+      <a class="social-link" href="https://youtube.com/@psygreg" aria-label="Social link 5">
+        <img
+          src="assets/light/youtube.webp"
+          data-icon-light="assets/light/youtube.webp"
+          data-icon-dark="assets/dark/youtube.webp"
+          alt=""
+        >
+      </a>
+      <a class="social-link" href="https://instagram.com/psygreg" aria-label="Social link 6">
+        <img
+          src="assets/light/insta.webp"
+          data-icon-light="assets/light/insta.webp"
+          data-icon-dark="assets/dark/insta.webp"
+          alt=""
+        >
+      </a>
+      <a class="social-link" href="https://twitch.tv/psygreg" aria-label="Social link 7">
+        <img
+          src="assets/light/twitch.webp"
+          data-icon-light="assets/light/twitch.webp"
+          data-icon-dark="assets/dark/twitch.webp"
+          alt=""
+        >
+      </a>
+      <a class="social-link" href="https://tiktok.com/@psygreg" aria-label="Social link 8">
+        <img
+          src="assets/light/tiktok.webp"
+          data-icon-light="assets/light/tiktok.webp"
+          data-icon-dark="assets/dark/tiktok.webp"
+          alt=""
+        >
+      </a>
+      <a class="social-link share-link" href="#" aria-label="Copiar link da página" title="Copiar link da página">
+        <img
+          src="assets/light/share.webp"
+          data-icon-light="assets/light/share.webp"
+          data-icon-dark="assets/dark/share.webp"
+          alt=""
+        >
+      </a>
+      </nav>
+    </div>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const toggle = document.querySelector('.theme-toggle');
+    const icon = document.querySelector('.theme-icon');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      root.dataset.theme = savedTheme;
+    }
+
+    function effectiveTheme() {
+      if (root.dataset.theme) return root.dataset.theme;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function updateSocialIcons() {
+      const theme = effectiveTheme();
+      document.querySelectorAll('img[data-icon-light][data-icon-dark]').forEach(image => {
+        image.src = theme === 'dark' ? image.dataset.iconDark : image.dataset.iconLight;
+      });
+    }
+
+    function updateThemeUI() {
+      if (effectiveTheme() === 'dark') {
+        icon.innerHTML = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>';
+      } else {
+        icon.innerHTML = '<path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"></path>';
+      }
+      updateSocialIcons();
+    }
+
+    toggle.addEventListener('click', () => {
+      const nextTheme = effectiveTheme() === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = nextTheme;
+      localStorage.setItem('theme', nextTheme);
+  
+    const shareLink = document.querySelector('.share-link');
+
+    shareLink?.addEventListener('click', async event => {
+      event.preventDefault();
+
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        shareLink.title = 'Link copiado!';
+      } catch {
+        try {
+          const textarea = document.createElement('textarea');
+          textarea.value = window.location.href;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+
+          const copied = document.execCommand('copy');
+          textarea.remove();
+
+          shareLink.title = copied ? 'Link copiado!' : 'Não foi possível copiar o link.';
+        } catch {
+          shareLink.title = 'Não foi possível copiar o link.';
+        }
+      }
+
+      window.setTimeout(() => {
+        shareLink.title = 'Copiar link da página';
+      }, 1800);
+    });
+
+    updateThemeUI();
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (!root.dataset.theme) updateThemeUI();
+    });
+
+    updateThemeUI();
+  </script>
+</body>
+</html>
