@@ -443,7 +443,9 @@
       const nextTheme = effectiveTheme() === 'dark' ? 'light' : 'dark';
       root.dataset.theme = nextTheme;
       localStorage.setItem('theme', nextTheme);
-  
+      updateThemeUI();
+    });
+
     const shareLink = document.querySelector('.share-link');
 
     shareLink?.addEventListener('click', async event => {
@@ -474,9 +476,6 @@
       window.setTimeout(() => {
         shareLink.title = 'Copy page link';
       }, 1800);
-    });
-
-    updateThemeUI();
     });
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
